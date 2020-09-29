@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/masterTemplate :: layout(~{::head}, ~{::nav}, ~{::main})}">
+<head th:replace="~{fragments/head :: headFragment(title='Sparta Global - Home')}">
+    <meta charset="UTF-8">
+    <link rel ="stylesheet" type="text/css" media="all" href="static/css/style.css"/>
+    <link rel ="stylesheet" type="text/css" media="all" href="webjars/bootstrap/4.5.2/css/bootstrap.css"  />
+    <title>Default Title</title>
+</head>
+<body>
+<nav th:replace="~{fragments/publicNavigation}">Navigation</nav>
+<main>
+    <div class="card">
+        <div class="card-header">
+            Enquiries
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Enter your Details below:</h5>
+            <form>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="validationDefault01">Name</label>
+                        <input type="text" class="form-control shadow p-3 mb-5 bg-white rounded" id="validationDefault01" placeholder="Full Name" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="validationDefault01">Mobile Number</label>
+                        <input type="text" class="form-control shadow p-3 mb-5 bg-white rounded" id="validationDefault01" placeholder="Mobile Number" required>
+                    </div>
+
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control shadow p-3 mb-5 bg-white rounded" id="exampleInputEmail1" placeholder="Email Address" aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">We will not share your email with anyone.</small>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="validationTextarea">Textarea</label>
+                        <textarea class="form-control is-invalid shadow p-3 mb-5 bg-white rounded" id="validationTextarea" placeholder="Please enter your enquiry here: MAX 250 CHARACTERS" required ></textarea>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Choose Hall
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">300</a>
+                    </div>
+                </div>
+                <br />
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                        <label class="form-check-label" for="invalidCheck2">
+                            Agree to terms and conditions
+                        </label>
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit">Submit form</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>
