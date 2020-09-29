@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/masterTemplate :: layout(~{::head}, ~{::nav}, ~{::main})}">
+<head th:replace="~{fragments/head :: headFragment(title='Sparta Global - Home')}">
+    <meta charset="UTF-8">
+    <link rel ="stylesheet" type="text/css" media="all" href="static/css/style.css"/>
+    <link rel ="stylesheet" type="text/css" media="all" href="webjars/bootstrap/4.5.2/css/bootstrap.css"  />
+    <title>Default Title</title>
+</head>
+<body>
+<nav th:replace="~{fragments/publicNavigation}">Navigation</nav>
+<main>
+    <div class="jumbotron">
+        <h5>Please choose one of the following options:</h5>
+        <hr class="my-4"></hr>
+        <form>
+            <div class="card-group">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Actor</h5>
+                            <label class="container1">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Film</h5>
+                            <label class="container1">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-4"></hr>
+            </div>
+        </form>
+    </div>
+</main>
+</body>
+</html>
