@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Controller
@@ -34,7 +36,9 @@ public class StudentPostController {
     @GetMapping("/studentBoard")
     public String getStudentPosts(Model model){
         List<StudentPosts> posts = studentPostService.getAllStudentPosts();
-        model.addAttribute("posts", posts);
+        ArrayList<StudentPosts> array = new ArrayList<>(posts);
+        Collections.reverse(array);
+        model.addAttribute("posts", array);
         model.addAttribute("newPost", new StudentPosts());
         model.addAttribute("email", new Student());
         return "view/studentPages/studentBoard";
