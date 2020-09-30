@@ -46,23 +46,7 @@ public class HallController {
         modelMap.addAttribute("hallIm", imageLocation);
         return "view/publicPages/halls";
     }
-//    @GetMapping("/hall")
-//    public String getHalls(ModelMap modelMap){
-//        Halls hall = hallService.getDefaultHall();
-//        Set<HallPictures> hallPictures = hall.getPictures();
-//        String pictureLocation = "";
-//        for(HallPictures hallPicture : hallPictures){
-//           if (hallPicture.getHallId()==1){
-//                if(hallPicture.getPictureId()==1){
-//                   pictureLocation = hallPicture.getPicture().getPictureLocation() + hallPicture.getPicture().getPictureName();
-//               }
-//           }
-//        }
-//
-//        modelMap.addAttribute("hall", hall);
-//        modelMap.addAttribute("logo", pictureLocation);
-//        return "databasetester";
-//    }
+
     @GetMapping("selectedHall")
     public String dummyMethod4(@RequestParam int hallId, ModelMap modelMap) {
         Halls hall = hallService.getDefaultHall();

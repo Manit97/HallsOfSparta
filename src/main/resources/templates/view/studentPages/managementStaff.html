@@ -14,54 +14,54 @@
         <hr class="my-4"></hr>
         <div class="container-fluid">
             <div class="card-deck">
-                <div class="card" >
+                <div th:each="admin : ${admins}" class="card" >
                     <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">John Doe</h5>
+                        <h5 class="card-title" th:text="${admin.adminFirstname} + ' ' + ${admin.adminLastname}">John Doe</h5>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Role: Head of Security</li>
-                        <li class="list-group-item">Email: john@sparta.com</li>
-                        <li class="list-group-item">Phone: 07739398555</li>
+                        <li class="list-group-item" th:text="'Role: ' + ${admin.adminRole}">Role: Head of Security</li>
+                        <li class="list-group-item" th:text="'Email: ' + ${admin.adminEmail}">Email: john@sparta.com</li>
+                        <li class="list-group-item" th:text="'Phone: ' + ${admin.adminPhoneno}">Phone: 07739398555</li>
                         <li class="list-group-item">On Site</li>
                     </ul>
                 </div>
-                <div class="card" >
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">John Doe</h5>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Role: Head of Security</li>
-                        <li class="list-group-item">Email: john@sparta.com</li>
-                        <li class="list-group-item">Phone: 07739398555</li>
-                        <li class="list-group-item">On Site</li>
-                    </ul>
-                </div>
-                <div class="card" >
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">John Doe</h5>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Role: Head of Security</li>
-                        <li class="list-group-item">Email: john@sparta.com</li>
-                        <li class="list-group-item">Phone: 07739398555</li>
-                        <li class="list-group-item">On Site</li>
-                    </ul>
-                </div>
-                <div class="card" >
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">John Doe</h5>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Role: Head of Security</li>
-                        <li class="list-group-item">Email: john@sparta.com</li>
-                        <li class="list-group-item">Phone: 07739398555</li>
-                        <li class="list-group-item">On Site</li>
-                    </ul>
-                </div>
+<!--                <div class="card" >-->
+<!--                    <img src="..." class="card-img-top" alt="...">-->
+<!--                    <div class="card-body">-->
+<!--                        <h5 class="card-title">John Doe</h5>-->
+<!--                    </div>-->
+<!--                    <ul class="list-group list-group-flush">-->
+<!--                        <li class="list-group-item">Role: Head of Security</li>-->
+<!--                        <li class="list-group-item">Email: john@sparta.com</li>-->
+<!--                        <li class="list-group-item">Phone: 07739398555</li>-->
+<!--                        <li class="list-group-item">On Site</li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--                <div class="card" >-->
+<!--                    <img src="..." class="card-img-top" alt="...">-->
+<!--                    <div class="card-body">-->
+<!--                        <h5 class="card-title">John Doe</h5>-->
+<!--                    </div>-->
+<!--                    <ul class="list-group list-group-flush">-->
+<!--                        <li class="list-group-item">Role: Head of Security</li>-->
+<!--                        <li class="list-group-item">Email: john@sparta.com</li>-->
+<!--                        <li class="list-group-item">Phone: 07739398555</li>-->
+<!--                        <li class="list-group-item">On Site</li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--                <div class="card" >-->
+<!--                    <img src="..." class="card-img-top" alt="...">-->
+<!--                    <div class="card-body">-->
+<!--                        <h5 class="card-title">John Doe</h5>-->
+<!--                    </div>-->
+<!--                    <ul class="list-group list-group-flush">-->
+<!--                        <li class="list-group-item">Role: Head of Security</li>-->
+<!--                        <li class="list-group-item">Email: john@sparta.com</li>-->
+<!--                        <li class="list-group-item">Phone: 07739398555</li>-->
+<!--                        <li class="list-group-item">On Site</li>-->
+<!--                    </ul>-->
+<!--                </div>-->
             </div>
         </div>
 

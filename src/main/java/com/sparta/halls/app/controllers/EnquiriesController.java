@@ -38,38 +38,36 @@ public class EnquiriesController {
     public String sendEnquiry(@ModelAttribute Enquiries enquiry, Model model){
         enquiry.setEnquiryTypeId(1);
         enquiriesService.addEnquiry(enquiry);
-        return "view/publicPages/welcome";
+        return "view/publicPages/success";
     }
 
-    @GetMapping("/maintenance")
+    @GetMapping("/maintenanceRequest")
     public String getMaintenanceRequest(Model model){
         List<Halls> halls = hallService.getAllHalls();
-        //enquiriesService.addTestEnquiry();
         model.addAttribute("halls", halls);
         model.addAttribute("enquiry", new Enquiries());
-        return ("view/publicPages/error");
+        return ("view/studentPages/maintenanceRequest");
     }
 
-    @PostMapping("/maintenance")
+    @PostMapping("/maintenanceRequest")
     public String sendMaintenanceRequest(@ModelAttribute Enquiries enquiry, Model model){
         enquiry.setEnquiryTypeId(2);
         enquiriesService.addEnquiry(enquiry);
-        return "view/publicPages/welcome";
+        return "view/publicPages/success";
     }
-    @GetMapping("/booking")
+    @GetMapping("/roomBooking")
     public String getBookingRequest(Model model){
         List<Halls> halls = hallService.getAllHalls();
-        //enquiriesService.addTestEnquiry();
         model.addAttribute("halls", halls);
         model.addAttribute("enquiry", new Enquiries());
-        return ("view/publicPages/error");
+        return ("view/studentPages/roomBooking");
     }
 
-    @PostMapping("/booking")
+    @PostMapping("/roomBooking")
     public String sendBookingRequest(@ModelAttribute Enquiries enquiry, Model model){
         enquiry.setEnquiryTypeId(3);
         enquiriesService.addEnquiry(enquiry);
-        return "view/publicPages/welcome";
+        return "view/publicPages/success";
     }
 
 

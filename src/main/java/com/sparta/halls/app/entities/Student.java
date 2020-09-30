@@ -13,7 +13,6 @@ public class Student {
     private String lastName;
     private String email;
     private Integer phoneNo;
-
     @Id
     @Column(name = "student_id")
     public int getStudentId() {
