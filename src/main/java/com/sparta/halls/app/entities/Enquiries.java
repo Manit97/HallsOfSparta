@@ -4,7 +4,6 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.util.Objects;
 
 @Entity
 public class Enquiries {
@@ -13,7 +12,8 @@ public class Enquiries {
     private String enquirerEmail;
     private String enquirerNumber;
     private String enquiryContent;
-    private int hallId;
+    private Integer hallId;
+    private Integer enquiryTypeId;
 
     @Id
     @Column(name = "enquiry_id")
@@ -67,12 +67,22 @@ public class Enquiries {
 
     @Basic
     @Column(name = "hall_id")
-    public int getHallId() {
+    public Integer getHallId() {
         return hallId;
     }
 
-    public void setHallId(int hallId) {
+    public void setHallId(Integer hallId) {
         this.hallId = hallId;
+    }
+
+    @Basic
+    @Column(name = "enquiry_type_id")
+    public Integer getEnquiryTypeId() {
+        return enquiryTypeId;
+    }
+
+    public void setEnquiryTypeId(Integer enquiryTypeId) {
+        this.enquiryTypeId = enquiryTypeId;
     }
 
     @Override
@@ -89,9 +99,11 @@ public class Enquiries {
             return false;
         if (enquirerNumber != null ? !enquirerNumber.equals(enquiries.enquirerNumber) : enquiries.enquirerNumber != null)
             return false;
-        if (!Objects.equals(enquiryContent, enquiries.enquiryContent))
+        if (enquiryContent != null ? !enquiryContent.equals(enquiries.enquiryContent) : enquiries.enquiryContent != null)
             return false;
-        if (!(hallId==enquiries.hallId) ) return false;
+        if (hallId != null ? !hallId.equals(enquiries.hallId) : enquiries.hallId != null) return false;
+        if (enquiryTypeId != null ? !enquiryTypeId.equals(enquiries.enquiryTypeId) : enquiries.enquiryTypeId != null)
+            return false;
 
         return true;
     }
@@ -103,7 +115,8 @@ public class Enquiries {
         result = 31 * result + (enquirerEmail != null ? enquirerEmail.hashCode() : 0);
         result = 31 * result + (enquirerNumber != null ? enquirerNumber.hashCode() : 0);
         result = 31 * result + (enquiryContent != null ? enquiryContent.hashCode() : 0);
-        result = 31 * result + (hallId);
+        result = 31 * result + (hallId != null ? hallId.hashCode() : 0);
+        result = 31 * result + (enquiryTypeId != null ? enquiryTypeId.hashCode() : 0);
         return result;
     }
 }
