@@ -16,7 +16,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-                .antMatchers("/**", "/landing", "/signedin").permitAll()
+                .antMatchers("/**", "/welcome", "/selectedRoom").permitAll()
+                .antMatchers("/signedin").hasAnyRole("USER", "ADMIN")
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
@@ -32,9 +33,9 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         // resident, nomResident, admin
         auth.inMemoryAuthentication()
-                .withUser("user").password("{noop}u").roles("USER")
+                .withUser("user@sparta.com").password("{noop}u").roles("USER")
                 .and()
-                .withUser("admin").password("{noop}a").roles("ADMIN")
+                .withUser("admin@sparta.com").password("{noop}a").roles("ADMIN")
                 .and()
                 .withUser("third").password("{noop}t").roles("THIRD");
     }

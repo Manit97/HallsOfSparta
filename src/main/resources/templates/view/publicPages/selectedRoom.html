@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/masterTemplate :: layout(~{::head}, ~{::nav}, ~{::main})}">
+<head th:replace="~{fragments/head :: headFragment(title='Sparta Global - Home')}">
+    <meta charset="UTF-8">
+    <link rel ="stylesheet" type="text/css" media="all" href="static/css/style.css"/>
+    <link rel ="stylesheet" type="text/css" media="all" href="webjars/bootstrap/4.5.2/css/bootstrap.css"  />
+    <title>Default Title</title>
+</head>
+<body>
+<nav th:replace="~{fragments/publicNavigation}">Navigation</nav>
+<main>
+    <div class="jumbotron">
+        <h5>Room Details</h5>
+        <hr class="my-4"></hr>
+        <div class="card-deck">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <hr class="my-4"></hr>
+                    <h5 class="card-title">Room Type</h5>
+                    <p class="card-text" >Double En-suite</p>
+                    <hr class="my-4"></hr>
+                    <h5 class="card-title">Room Size</h5>
+                    <p class="card-text" >Big</p>
+                    <hr class="my-4"></hr>
+                    <h5 class="card-title">Description</h5>
+                    <p class="card-text" >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <hr class="my-4"></hr>
+                    <h5 class="card-title">Price</h5>
+                    <p class="card-text" >£6079.90</p>
+                    <hr class="my-4"></hr>
+                </div>
+            </div>
+
+            <div class="card mb-3 cardbodsize">
+                <img src="images/rhul.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Number of Rooms</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4"></hr>
+
+        </div>
+
+    </div>
+</main>
+</body>
+</html>

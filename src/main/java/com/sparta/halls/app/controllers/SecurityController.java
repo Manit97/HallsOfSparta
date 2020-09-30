@@ -8,7 +8,7 @@ public class SecurityController {
 
     @GetMapping("/")
     public String dummyMethod() {
-        return "view/publicPages/landing";
+        return "view/publicPages/welcome";
     }
 
     @GetMapping("/login")

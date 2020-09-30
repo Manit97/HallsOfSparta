@@ -7,4 +7,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class PublicController {
+
+    @GetMapping("/welcome")
+    public String dummyMethod5() {
+        return "view/publicPages/welcome";
+    }
+
+    @GetMapping("/selectedRoom")
+    public String dummyMethod6() {
+        return "view/publicPages/selectedRoom";
+    }
 }
