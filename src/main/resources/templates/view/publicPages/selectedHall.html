@@ -10,24 +10,24 @@
 <nav th:replace="~{fragments/publicNavigation}">Navigation</nav>
 <main>
     <div class="jumbotron">
-        <h5>The 300 Details:</h5>
+        <h5 th:text="${hall.hallName}">The 300 Details</h5>
         <hr class="my-4"></hr>
         <div class="card-deck">
             <div class="card mb-3">
                 <div class="card-body">
-                    <h5 class="card-title">Description</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h5 class="card-title" >Contact email</h5>
+                    <p class="card-text"th:text="${hall.contactEmail}">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <hr class="my-4"></hr>
                     <h5 class="card-title">Description</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text" th:text="${hall.description}">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
             </div>
 
             <div class="card mb-3 cardbodsize">
                 <img src="images/rhul.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h5 class="card-title">Number of Rooms</h5>
+                    <p class="card-text" th:text="${hall.numOfRooms}">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
             </div>
@@ -35,49 +35,49 @@
         <hr class="my-4"></hr>
         <h5>Room Types</h5>
         <div class="accordion" id="accordionExample">
-            <div class="card">
-                <div class="card-header" id="headingOne">
+            <div th:each="roomType : ${roomTypes}" class="card">
+                <div class="card-header" th:id="${roomType}">
                     <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" th:data-target="'#' +${roomType.roomType}" aria-expanded="true" th:aria-controls="${roomType.roomType}" th:text="${roomType.roomType}">
                             Collapsible Group Item #1
                         </button>
                     </h2>
                 </div>
 
-                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div th:id="${roomType.roomType}" class="collapse" th:aria-labelledby="${roomType}" data-parent="#accordionExample">
                     <div class="card-body collapse-size">
-                        <img src="images/rhul.jpeg" class="card-img-top" alt="...">
+                        <img th:src="${hallIm}" class="card-img-top" alt="...">
                     </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-header" id="headingTwo">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Collapsible Group Item #2
-                        </button>
-                    </h2>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                    <div class="card-body collapse-size">
-                        <img src="images/rhul.jpeg" class="card-img-top" alt="...">
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="headingThree">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Collapsible Group Item #3
-                        </button>
-                    </h2>
-                </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                    <div class="card-body collapse-size">
-                        <img src="images/rhul.jpeg" class="card-img-top" alt="...">
-                    </div>
-                </div>
-            </div>
+<!--            <div class="card">-->
+<!--                <div class="card-header" id="headingTwo">-->
+<!--                    <h2 class="mb-0">-->
+<!--                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">-->
+<!--                            Collapsible Group Item #2-->
+<!--                        </button>-->
+<!--                    </h2>-->
+<!--                </div>-->
+<!--                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">-->
+<!--                    <div class="card-body collapse-size">-->
+<!--                        <img src="images/rhul.jpeg" class="card-img-top" alt="...">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="card">-->
+<!--                <div class="card-header" id="headingThree">-->
+<!--                    <h2 class="mb-0">-->
+<!--                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">-->
+<!--                            Collapsible Group Item #3-->
+<!--                        </button>-->
+<!--                    </h2>-->
+<!--                </div>-->
+<!--                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">-->
+<!--                    <div class="card-body collapse-size">-->
+<!--                        <img src="images/rhul.jpeg" class="card-img-top" alt="...">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
         </div>
 
     </div>
