@@ -22,5 +22,9 @@ public class HallService {
         List<Halls> halls= (List<Halls>) hallsRepository.findAll();
         return halls.get(0);
     }
+    public List<Halls> getAllHalls(){
+        List<Halls> halls= (List<Halls>) hallsRepository.findAll();
+        return halls;
+    }
 
 }
