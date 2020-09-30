@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(head, nav, main)">
+<head th:replace="${head}">
+    <meta charset="UTF-8">
+<!--    <link rel ="stylesheet" type="text/css" media="all" href="resources/css/style.css" />-->
+<!--    <link rel ="stylesheet" type="text/css" media="all" href="webjars/bootstrap/4.5.2/css/bootstrap.css" />-->
+    <title>Master</title>
+</head>
+<body>
+<div class="container">
+    <nav th:replace="${nav}">Default Navigation</nav>
+    <main th:replace="${main}">
+        <p>Default Page for ThymeLeaf</p>
+    </main>
+    <footer th:replace="fragments/footer :: footerFragment">
+        Default Footer
+    </footer>
+</div>
+</body>
+</html>
