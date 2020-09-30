@@ -18,6 +18,6 @@ public class EnquiriesController {
     @GetMapping("/enquiries")
     public String getEnquiry(){
         enquiriesService.addTestEnquiry();
-        return ("testEnquiries");
+        return ("view/publicPages/enquiries");
     }
 }
