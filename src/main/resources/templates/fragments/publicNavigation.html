@@ -36,12 +36,15 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" th:href="@{/enquiries}">Enquiries</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" th:href="@{/login}">Login</a>
+                    <a class="dropdown-item" th:if="${#httpServletRequest.getRemoteUser() == null}" th:href="@{/login}">Login</a>
+                    <a class="dropdown-item" th:if="${#httpServletRequest.getRemoteUser() != null}" th:href="@{/logout}">Logout</a>
                 </div>
             </li>
-
         </ul>
     </div>
+    <a class="navbar-text" th:if="${#httpServletRequest.getRemoteUser() != null}">
+        Signed in with: [[${#httpServletRequest.getRemoteUser()}]]
+    </a>
 </nav>
 </body>
 </html>
