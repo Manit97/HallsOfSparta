@@ -13,8 +13,8 @@ public class PublicController {
         return "view/publicPages/welcome";
     }
 
-    @GetMapping("/selectedRoom")
-    public String dummyMethod6() {
-        return "view/publicPages/selectedRoom";
-    }
+//    @GetMapping("/selectedRoom")
+//    public String dummyMethod6() {
+//        return "view/publicPages/selectedRoom";
+//    }
 }

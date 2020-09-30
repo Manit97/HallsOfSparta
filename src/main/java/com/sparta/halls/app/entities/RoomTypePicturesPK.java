@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 public class RoomTypePicturesPK implements Serializable {
     private int pictureId;
-    private String roomTypeId;
+    private int roomTypeId;
 
     @Column(name = "picture_id")
     @Id
@@ -20,11 +20,11 @@ public class RoomTypePicturesPK implements Serializable {
 
     @Column(name = "room_type_id")
     @Id
-    public String getRoomTypeId() {
+    public int getRoomTypeId() {
         return roomTypeId;
     }
 
-    public void setRoomTypeId(String roomTypeId) {
+    public void setRoomTypeId(int roomTypeId) {
         this.roomTypeId = roomTypeId;
     }
 
@@ -36,7 +36,7 @@ public class RoomTypePicturesPK implements Serializable {
         RoomTypePicturesPK that = (RoomTypePicturesPK) o;
 
         if (pictureId != that.pictureId) return false;
-        if (roomTypeId != null ? !roomTypeId.equals(that.roomTypeId) : that.roomTypeId != null) return false;
+        if (roomTypeId != that.roomTypeId) return false;
 
         return true;
     }
@@ -44,7 +44,7 @@ public class RoomTypePicturesPK implements Serializable {
     @Override
     public int hashCode() {
         int result = pictureId;
-        result = 31 * result + (roomTypeId != null ? roomTypeId.hashCode() : 0);
+        result = 31 * result + (roomTypeId);
         return result;
     }
 }
