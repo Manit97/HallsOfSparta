@@ -10,17 +10,49 @@
 <nav th:replace="~{fragments/publicNavigation}">Navigation</nav>
 <main>
     <div class="jumbotron">
-        <h5>Student Notice Board</h5>
-        <hr class="my-4"></hr>
         <div class="container-fluid">
+        <h5>Make New Post</h5>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">New Post</button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Title</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Message:</label>
+                                <textarea class="form-control" id="message-text"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Send message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4"></hr>
+        <br/>
+            <h5>Student Notice Board</h5>
+            <br/>
             <div class="card border-secondary mb-3 container-fluid" >
-                <div class="card-header">Header</div>
+                <div class="card-header">Student Name:</div>
                 <div class="card-body text-secondary">
-                    <h5 class="card-title">Secondary card title</h5>
+                    <h5 class="card-title">Topic</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
                 <div class="card-footer text-muted">
-                    2 days ago
+                    Date Posted:
                 </div>
             </div>
         </div>
