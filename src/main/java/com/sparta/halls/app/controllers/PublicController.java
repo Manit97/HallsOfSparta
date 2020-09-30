@@ -13,6 +13,11 @@ public class PublicController {
         return "view/publicPages/welcome";
     }
 
+    @GetMapping("/success")
+    public String dummyMethod6() {
+        return "view/publicPages/success";
+    }
+
 
 
 }

@@ -11,4 +11,20 @@ public class StudentController {
         return "view/studentPages/managementStaff";
     }
 
+    @GetMapping("/rulesRegulations")
+    public String dummyMethod9() {
+        return "view/studentPages/rulesRegulations";
+    }
+
+    @GetMapping("/maintenanceRequest")
+    public String dummyMethod10() {
+        return "view/studentPages/maintenanceRequest";
+    }
+
+    @GetMapping("/roomBooking")
+    public String dummyMethod11() {
+        return "view/studentPages/roomBooking";
+    }
+
+
 }
