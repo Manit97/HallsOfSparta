@@ -19,6 +19,9 @@
                     <h5 class="card-title" th:text="${hall.hallName}">The 300</h5>
                     <p class="card-text" th:text="${hall.description}">A prestigious hall with a variety of different types of rooms to fit your needs.</p>
                     <a class="btn-link" th:text="${hall.hallName}"th:href="'selectedHall?hallId=' + ${hall.hallsId}">Select</a>
+                    <hr class="my-4"></hr>
+                    <h5 class="card-subtitle">View Room Types</h5>
+                    <a class="btn-link" th:href="@{/roomTypes}">Select</a>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted" th:text="'Distance from uni: ' + ${hall.distToUni}">On Campus</small>
@@ -29,7 +32,9 @@
                 <div class="card-body">
                     <h5 class="card-title">The 301</h5>
                     <p class="card-text">Coming Soon: A stunning modern build accommodation with en-suite studio apartments.</p>
-                    <p class="card-text">Price: TBD</p>
+                    <hr class="my-4"></hr>
+                    <h5 class="card-subtitle">View Room Types</h5>
+                    <a class="btn-link disabled" th:href="...">Select</a>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">On Campus</small>
@@ -40,7 +45,9 @@
                 <div class="card-body">
                     <h5 class="card-title">The 302</h5>
                     <p class="card-text">Coming Soon: A new built building with old characteristics with shared facilities.</p>
-                    <p class="card-text">Price: TBD</p>
+                    <hr class="my-4"></hr>
+                    <h5 class="card-subtitle">View Room Types</h5>
+                    <a class="btn-link disabled" th:href="...">Select</a>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">Off Campus</small>

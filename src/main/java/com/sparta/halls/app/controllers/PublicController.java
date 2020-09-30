@@ -17,4 +17,10 @@ public class PublicController {
     public String dummyMethod6() {
         return "view/publicPages/selectedRoom";
     }
+
+    @GetMapping("/roomTypes")
+    public String dummyMethod7() {
+        return "view/publicPages/roomTypes";
+    }
+
 }
