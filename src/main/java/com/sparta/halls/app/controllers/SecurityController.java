@@ -16,6 +16,11 @@ public class SecurityController {
         return "view/publicPages/login";
     }
 
+    @GetMapping("/logout")
+    public String logoutPage() {
+        return "view/publicPages/login?logout";
+    }
+
     @GetMapping("/signedin")
     public String signedinPage() {
         return "view/publicPages/signedin";
