@@ -5,8 +5,6 @@ import com.sparta.halls.app.repositories.EnquiriesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 public class EnquiriesService {
     private final EnquiriesRepository enquiriesRepository;
