@@ -30,6 +30,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        // resident, nomResident, admin
         auth.inMemoryAuthentication()
                 .withUser("user").password("{noop}u").roles("USER")
                 .and()
