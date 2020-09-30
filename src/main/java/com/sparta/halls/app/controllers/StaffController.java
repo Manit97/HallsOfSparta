@@ -16,10 +16,10 @@ public class StaffController {
         this.adminService = adminService;
     }
 
-    @GetMapping("/staff")
+    @GetMapping("/managementStaff")
     public String getManagement(ModelMap modelMap){
         List<Admins> admins = adminService.getAdmins();
         modelMap.addAttribute("admins", admins);
-        return"view/publicPages/error";
+        return"view/studentPages/managementStaff";
     }
 }

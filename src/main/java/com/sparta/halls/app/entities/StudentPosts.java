@@ -4,13 +4,24 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "student_posts", schema = "sparta_rooms", catalog = "")
+@Table(name = "student_posts", schema = "sparta_rooms")
 public class StudentPosts {
     private int postId;
     private Integer studentId;
     private String postHeader;
     private String postContent;
     private Timestamp postDateTime;
+    private Student student;
+
+    @OneToOne
+    @JoinColumn(name = "student_id", insertable = false, updatable = false)
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
 
     @Id
     @Column(name = "post_id")
