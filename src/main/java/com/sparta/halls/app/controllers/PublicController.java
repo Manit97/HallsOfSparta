@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class PublicController {
-
     @GetMapping("/")
     public String dummyMethod() {
         return "view/publicPages/welcome";
@@ -22,13 +21,4 @@ public class PublicController {
     public String dummyMethod1() {
         return "view/publicPages/login";
     }
-//
-//    @GetMapping("enquiries")
-//    public String dummyMethod2() {
-//        return "view/publicPages/enquiries";
-//    }
-//
-
-
-
 }
