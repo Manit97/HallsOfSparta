@@ -3,11 +3,11 @@ package com.sparta.halls.app.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "room_type_pictures", schema = "sparta_rooms", catalog = "")
+@Table(name = "room_type_pictures", schema = "sparta_rooms")
 @IdClass(RoomTypePicturesPK.class)
 public class RoomTypePictures {
     private int pictureId;
-    private String roomTypeId;
+    private int roomTypeId;
 
     private Pictures picture;
     private RoomTypes roomType;
@@ -45,11 +45,11 @@ public class RoomTypePictures {
 
     @Id
     @Column(name = "room_type_id")
-    public String getRoomTypeId() {
+    public int getRoomTypeId() {
         return roomTypeId;
     }
 
-    public void setRoomTypeId(String roomTypeId) {
+    public void setRoomTypeId(int roomTypeId) {
         this.roomTypeId = roomTypeId;
     }
 
@@ -61,7 +61,7 @@ public class RoomTypePictures {
         RoomTypePictures that = (RoomTypePictures) o;
 
         if (pictureId != that.pictureId) return false;
-        if (roomTypeId != null ? !roomTypeId.equals(that.roomTypeId) : that.roomTypeId != null) return false;
+        if (roomTypeId != that.roomTypeId) return false;
 
         return true;
     }
@@ -69,7 +69,7 @@ public class RoomTypePictures {
     @Override
     public int hashCode() {
         int result = pictureId;
-        result = 31 * result + (roomTypeId != null ? roomTypeId.hashCode() : 0);
+        result = 31 * result + (pictureId);
         return result;
     }
 }
