@@ -20,15 +20,6 @@
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/managementStaff}">Management Staff</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/rulesRegulations}">Rules & Regulations</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/maintenanceRequest}">Maintenance Request</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/roomBooking}">Room Booking</a>
-            </li>
             <li class="float-right nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     More
@@ -38,6 +29,19 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" th:if="${#httpServletRequest.getRemoteUser() == null}" th:href="@{/login}">Login</a>
                     <a class="dropdown-item" th:if="${#httpServletRequest.getRemoteUser() != null}" th:href="@{/logout}">Logout</a>
+                </div>
+            </li>
+            <li class="float-right nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Student Options
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                    <a class="dropdown-item" th:href="@{/rulesRegulations}">Rules and Regulations</a>
+                    <a class="dropdown-item" th:href="@{/managementStaff}">Management Staff</a>
+                    <a class="dropdown-item" th:href="@{/maintenanceRequest}">Maintenance Request</a>
+                    <a class="dropdown-item" th:href="@{/roomBooking}">Room Booking Request</a>
+                    <div class="dropdown-divider"></div>
+
                 </div>
             </li>
         </ul>
