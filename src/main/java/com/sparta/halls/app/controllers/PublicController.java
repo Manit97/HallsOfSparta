@@ -18,6 +18,11 @@ public class PublicController {
         return "view/publicPages/success";
     }
 
+    @GetMapping("/studentBoard")
+    public String dummyMethod7() {
+        return "view/studentPages/studentBoard";
+    }
+
 
 
 }

@@ -10,19 +10,19 @@
 <nav th:replace="~{fragments/publicNavigation}">Navigation</nav>
 <main>
     <div class="jumbotron">
-        <h5>Success!</h5>
+        <h5>Student Notice Board</h5>
         <hr class="my-4"></hr>
-        <div class="container">
-            <form>
-                <div class="card text-center">
-                    <div class="card-body">
-                        <h5 align="middle">We will get back to your as soon as possible!</h5>
-                        <label class="wrapper">
-                            <a class="btn btn-outline-success" th:href="@{/welcome}">Return Home</a>
-                        </label>
-                    </div>
+        <div class="container-fluid">
+            <div class="card border-secondary mb-3 container-fluid" >
+                <div class="card-header">Header</div>
+                <div class="card-body text-secondary">
+                    <h5 class="card-title">Secondary card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
-            </form>
+                <div class="card-footer text-muted">
+                    2 days ago
+                </div>
+            </div>
         </div>
         <hr class="my-4"></hr>
     </div>
