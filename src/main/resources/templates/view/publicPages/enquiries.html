@@ -15,38 +15,36 @@
         </div>
         <div class="card-body">
             <h5 class="card-title">Enter your Details below:</h5>
-            <form>
+            <form action="#" th:action="@{/enquiries}" th:object="${enquiry}" method="post">
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
-                        <label for="validationDefault01">Name</label>
-                        <input type="text" class="form-control shadow p-3 mb-5 bg-white rounded" id="validationDefault01" placeholder="Full Name" required>
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control shadow p-3 mb-5 bg-white rounded" id="name" placeholder="Full Name" th:field="*{enquirerName}" required>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="validationDefault01">Mobile Number</label>
-                        <input type="text" class="form-control shadow p-3 mb-5 bg-white rounded" id="validationDefault01" placeholder="Mobile Number" required>
+                        <label for="number">Mobile Number</label>
+                        <input type="text" class="form-control shadow p-3 mb-5 bg-white rounded" id="number" placeholder="Mobile Number" th:field="*{enquirerNumber}" required>
                     </div>
 
                 </div>
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control shadow p-3 mb-5 bg-white rounded" id="exampleInputEmail1" placeholder="Email Address" aria-describedby="emailHelp">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control shadow p-3 mb-5 bg-white rounded" id="email" placeholder="Email Address" th:field="*{enquirerEmail} "aria-describedby="emailHelp">
                         <small id="emailHelp" class="form-text text-muted">We will not share your email with anyone.</small>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
-                        <label for="validationTextarea">Textarea</label>
-                        <textarea class="form-control is-invalid shadow p-3 mb-5 bg-white rounded" id="validationTextarea" placeholder="Please enter your enquiry here: MAX 250 CHARACTERS" required ></textarea>
+                        <label for="content">Textarea</label>
+                        <textarea class="form-control is-invalid shadow p-3 mb-5 bg-white rounded" id="content" placeholder="Please enter your enquiry here: MAX 250 CHARACTERS" th:field="*{enquiryContent}" required ></textarea>
                     </div>
                 </div>
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Choose Hall
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">300</a>
-                    </div>
+                    <select class="form-control" id="dropHalls" name="hallId" th:field="*{hallId}">
+                        <option value="0">Please Select a hall</option>
+                        <option th:each="hall : ${halls}" th:value="${hall.hallsId}" th:text="${hall.hallName}"></option>
+                    </select>
                 </div>
                 <br />
                 <div class="form-group">

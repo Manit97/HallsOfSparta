@@ -17,7 +17,7 @@ public class EnquiriesService {
     }
     public void addTestEnquiry(){
         Enquiries enquiries = new Enquiries();
-        enquiries.setEnquiryId(1);
+        //enquiries.setEnquiryId(1);
         enquiries.setEnquirerName("testname");
         enquiries.setEnquirerEmail("testemail");
         enquiries.setEnquiryContent("testcontent");
