@@ -2,16 +2,33 @@
 <html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Blockbuster Netflix Prime</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="#">University of Sparta</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-link" href="../view/publicPages/welcome">Home</a>
-<!--            <&#45;&#45;a class="nav-link" th:href="@{/aboutus}">About Me<&#45;&#45;/a>-->
-<!--            <&#45;&#45;a class="nav-link" th:href="@{/contactus}">Contact Me<&#45;&#45;/a>-->
-        </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" th:href="@{/welcome}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/halls}">Halls</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/aboutus}">About Us</a>
+            </li>
+            <li class="float-right nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" th:href="@{/enquiries}">Enquiries</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" th:href="@{/login}">Login</a>
+                </div>
+            </li>
+
+        </ul>
     </div>
 </nav>
 </body>

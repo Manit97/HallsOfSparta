@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/masterTemplate :: layout(~{::head}, ~{::nav}, ~{::main})}">
+<head th:replace="~{fragments/head :: headFragment(title='Sparta Global - Home')}">
+    <meta charset="UTF-8">
+    <link rel ="stylesheet" type="text/css" media="all" href="static/css/style.css"/>
+    <link rel ="stylesheet" type="text/css" media="all" href="webjars/bootstrap/4.5.2/css/bootstrap.css"  />
+    <title>Default Title</title>
+</head>
+<body>
+<nav th:replace="~{fragments/publicNavigation}">Navigation</nav>
+<main>
+    <div class="jumbotron">
+        <h5>Please select one of the following halls:</h5>
+        <hr class="my-4"></hr>
+        <div class="card-deck">
+            <div class="card">
+                <img th:src="${hallIm}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${hall.hallName}">The 300</h5>
+                    <p class="card-text" th:text="${hall.description}">A prestigious hall with a variety of different types of rooms to fit your needs.</p>
+                    <a class="btn-link" th:text="${hall.hallName}"th:href="'selectedHall?hallId=' + ${hall.hallsId}">Select</a>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted" th:text="'Distance from uni: ' + ${hall.distToUni}">On Campus</small>
+                </div>
+            </div>
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">The 301</h5>
+                    <p class="card-text">Coming Soon: A stunning modern build accommodation with en-suite studio apartments.</p>
+                    <p class="card-text">Price: TBD</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">On Campus</small>
+                </div>
+            </div>
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">The 302</h5>
+                    <p class="card-text">Coming Soon: A new built building with old characteristics with shared facilities.</p>
+                    <p class="card-text">Price: TBD</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Off Campus</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>
