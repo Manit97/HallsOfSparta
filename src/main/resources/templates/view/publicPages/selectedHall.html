@@ -47,6 +47,7 @@
                 <div th:id="${roomType.roomType}" class="collapse" th:aria-labelledby="${roomType}" data-parent="#accordionExample">
                     <div class="card-body collapse-size">
                         <img th:src="${hallIm}" class="card-img-top" alt="...">
+                        <a class="btn-link" th:href="@{'/selectedRoom' + '?roomId=' + ${roomType.roomTypeId}}" th:text="${roomType.roomType}">Select</a>
                     </div>
                 </div>
             </div>
