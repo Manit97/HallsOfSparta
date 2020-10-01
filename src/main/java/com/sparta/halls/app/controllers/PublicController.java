@@ -23,6 +23,16 @@ public class PublicController {
         return "view/studentPages/studentBoard";
     }
 
+    @GetMapping("/deletePosts")
+    public String dummyMethod8() {
+        return "view/studentPages/deletePosts";
+    }
+
+    @GetMapping("/postSuccess")
+    public String dummyMethod9() {
+        return "view/studentPages/postSuccess";
+    }
+
 
 
 }
