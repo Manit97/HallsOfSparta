@@ -17,6 +17,7 @@ public class PublicController {
     @GetMapping("/success")
     public String dummyMethod6() {
         return Pages.PUBLIC_ENQUIRY_SENT;
+    }
 
     @GetMapping("/viewPublicEnquiries")
     public String dummyMethod10() {
