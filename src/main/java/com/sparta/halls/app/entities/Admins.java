@@ -1,9 +1,7 @@
 package com.sparta.halls.app.entities;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Admins {
@@ -13,6 +11,16 @@ public class Admins {
     private String adminEmail;
     private String adminPhoneno;
     private String adminRole;
+    private Set<AdminPosts> adminPosts;
+
+    @OneToMany(mappedBy = "admin")
+    public Set<AdminPosts> getAdminPosts() {
+        return adminPosts;
+    }
+
+    public void setAdminPosts(Set<AdminPosts> adminPosts) {
+        this.adminPosts = adminPosts;
+    }
 
     @Id
     @Column(name = "admin_id")
