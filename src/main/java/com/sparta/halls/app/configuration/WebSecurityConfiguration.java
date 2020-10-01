@@ -36,7 +36,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         auth.inMemoryAuthentication()
                 .withUser("user@sparta.ac.uk").password("{noop}u").roles(Roles.STUDENT)
                 .and()
-                .withUser("admin@sparta.ac.uk").password("{noop}a").roles(Roles.ADMIN)
+                .withUser("admin@sparta.ac.uk").password("{noop}a").roles(Roles.ADMIN,Roles.STUDENT)
                 .and()
                 .withUser("third@sparta.ac.uk").password("{noop}t").roles(Roles.PUBLIC);
     }
