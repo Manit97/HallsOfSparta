@@ -33,8 +33,18 @@ public class PublicController {
         return "view/adminPages/viewPublicEnquiries";
     }
 
-    @GetMapping("/deleteSuccess")
+    @GetMapping("/viewMaintenancePosts")
     public String dummyMethod11() {
+        return "view/adminPages/viewMaintenancePosts";
+    }
+
+    @GetMapping("/viewRoomBookings")
+    public String dummyMethod12() {
+        return "view/adminPages/viewRoomBookings";
+    }
+
+    @GetMapping("/deleteSuccess")
+    public String dummyMethod13() {
         return "view/studentPages/deleteSuccess";
     }
 
