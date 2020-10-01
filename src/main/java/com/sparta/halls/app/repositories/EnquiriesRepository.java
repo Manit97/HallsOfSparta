@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface EnquiriesRepository extends CrudRepository<Enquiries, Integer>{
-    List<Enquiries> findAllByeAndEnquiryTypeId(int type);
+    List<Enquiries> findAllByEnquiryTypeId(int type);
 }

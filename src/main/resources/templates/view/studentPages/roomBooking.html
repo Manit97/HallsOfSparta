@@ -46,6 +46,12 @@
                         <option th:each="hall : ${halls}" th:value="${hall.hallsId}" th:text="${hall.hallName}"></option>
                     </select>
                 </div>
+                <div class="dropdown">
+                    <select class="form-control" id="dropRooms" name="dropRooms" th:field="*{publicRoomId}">
+                        <option value="0">Please Select a Room</option>
+                        <option th:each="room : ${rooms}" th:value="${room.publicRoomId}" th:text="${room.publicRoomName}"></option>
+                    </select>
+                </div>
                 <br />
                 <div class="form-group">
                     <div class="form-check">

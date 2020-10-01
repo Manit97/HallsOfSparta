@@ -20,18 +20,20 @@
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Phone Number</th>
-                    <th scope="col">Hall Id</th>
                     <th scope="col">Details</th>
+                    <th scope="col">Hall Id</th>
+                    <th scope="col">Room</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Public Full Name</td>
-                    <td>Public Email Address</td>
-                    <td>Public Phone Number</td>
-                    <th scope="col">Hall Name</th>
-                    <td>Room Details</td>
+                <tr th:each="enq : ${enquiries}">
+                    <th scope="row" th:text="${enq.enquiryId}">1</th>
+                    <td th:text="${enq.enquirerName}">Public Full Name</td>
+                    <td th:text="${enq.enquirerEmail}">Public Email Address</td>
+                    <td th:text="${enq.enquirerNumber}">Public Phone Number</td>
+                    <td th:text="${enq.enquiryContent}">Public Enquiry Details</td>
+                    <td th:text="${enq.hallId}">Hall</td>
+                    <td th:text="${enq.publicRoomId}">Hall</td>
                 </tr>
                 </tbody>
             </table>

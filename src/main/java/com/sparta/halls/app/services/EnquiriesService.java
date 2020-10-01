@@ -31,7 +31,7 @@ public class EnquiriesService {
     }
 
     public List<Enquiries> getEnquiriesByType(int id){
-        List<Enquiries> enquiries = enquiriesRepository.findAllByeAndEnquiryTypeId(id);
+        List<Enquiries> enquiries = enquiriesRepository.findAllByEnquiryTypeId(id);
         return enquiries;
     }
 }
