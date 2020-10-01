@@ -30,8 +30,12 @@ public class Pages {
     public static final String STUDENT_POST_SUCCESSFUL      = "view/studentPages/postSuccess";
     public static final String STUDENT_VIEW_MANAGEMENT      = "view/studentPages/managementStaff";
     public static final String NOM_STUDENT_DELETE_POST      = "view/studentPages/deletePosts";
+    public static final String NOM_STUDENT_DELETE_SUCCESS   = "view/studentPages/deleteSuccess";
 
     // == ADMIN PAGES ===================================================================================
+    public static final String ADMIN_VIEW_MAINTENANCE_POSTS = "view/adminPages/viewMaintenancePosts";
+    public static final String ADMIN_VIEW_PUBLIC_ENQUIRIES  = "view/adminPages/viewPublicEnquiries";
+    public static final String ADMIN_VIEW_ROOM_BOOKINGS     = "view/adminPages/viewRoomBookings";
 
 
 
@@ -46,8 +50,10 @@ public class Pages {
                 ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes())
                         .getRequest();
 
-        if (request != null) {
-            if (request.isUserInRole(accessRole) || accessRole.equals(Roles.PUBLIC)) {
+        if (accessRole.equals(Roles.PUBLIC)) {
+            return expectedPage;
+        } else if (request != null) {
+            if (request.isUserInRole(accessRole) || request.isUserInRole(Roles.ADMIN)) {
                 return expectedPage;
             }
         }
