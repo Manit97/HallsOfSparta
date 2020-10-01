@@ -1,5 +1,7 @@
 package com.sparta.halls.app.controllers;
 
+import com.sparta.halls.app.Pages;
+import com.sparta.halls.app.Roles;
 import com.sparta.halls.app.entities.Enquiries;
 import com.sparta.halls.app.entities.Halls;
 import com.sparta.halls.app.entities.Student;
@@ -45,7 +47,7 @@ public class StudentPostController {
         Collections.reverse(array);
         model.addAttribute("posts", array);
         model.addAttribute("newPost", new StudentPosts());
-        return "view/studentPages/studentBoard";
+        return Pages.accessPage(Roles.STUDENT, Pages.STUDENT_NOTICE_BOARD);
     }
     @PostMapping("/studentBoard")
     public String postStudentPost(@ModelAttribute StudentPosts newPost, Model model){
@@ -60,9 +62,10 @@ public class StudentPostController {
         newPost.setStudentId(student.getStudentId());
         newPost.setPostDateTime(LocalDateTime.now());
         studentPostService.addStudentPost(newPost);
-
-        return "view/studentPages/postSuccess";
+      
+        return Pages.accessPage(Roles.STUDENT, Pages.STUDENT_POST_SUCCESSFUL);
     }
+  
     @GetMapping("/studentPostsModeration")
     public String getStudentPostsModeration(ModelMap modelMap){
         List<StudentPosts> posts = studentPostService.getAllStudentPosts();

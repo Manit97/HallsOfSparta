@@ -1,7 +1,13 @@
 package com.sparta.halls.app.controllers;
 
+import com.sparta.halls.app.Pages;
+import com.sparta.halls.app.Roles;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class StudentController {
@@ -12,8 +18,18 @@ public class StudentController {
 //    }
 
     @GetMapping("/rulesRegulations")
-    public String dummyMethod9() {
-        return "view/studentPages/rulesRegulations";
+    public String rulesAndRegulationsPage() {
+        return Pages.accessPage(Roles.STUDENT, Pages.STUDENT_RULES);
+    }
+
+    @GetMapping("/deletePosts")
+    public String deletePostsPage() {
+        return Pages.accessPage(Roles.NOMINATED_STUDENT, Pages.NOM_STUDENT_DELETE_POST);
+    }
+
+    @GetMapping("/postSuccess")
+    public String postSuccessfulPage() {
+        return Pages.accessPage(Roles.STUDENT, Pages.STUDENT_POST_SUCCESSFUL);
     }
 
 //    @GetMapping("/maintenanceRequest")

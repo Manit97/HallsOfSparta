@@ -1,5 +1,7 @@
 package com.sparta.halls.app.controllers;
 
+import com.sparta.halls.app.Pages;
+import com.sparta.halls.app.Roles;
 import com.sparta.halls.app.entities.RoomTypePictures;
 import com.sparta.halls.app.entities.RoomTypes;
 import com.sparta.halls.app.services.RoomTypeService;
@@ -42,6 +44,6 @@ public class RoomTypeController {
 
         modelMap.addAttribute("rooms", roomTypesList);
         modelMap.addAttribute("roomPics", roomPictureList);
-        return "view/publicPages/roomTypes";
+        return Pages.accessPage(Roles.PUBLIC, Pages.PUBLIC_VIEW_ROOM_TYPES);
     }
 }

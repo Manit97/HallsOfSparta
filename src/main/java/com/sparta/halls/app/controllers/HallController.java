@@ -1,5 +1,7 @@
 package com.sparta.halls.app.controllers;
 
+import com.sparta.halls.app.Pages;
+import com.sparta.halls.app.Roles;
 import com.sparta.halls.app.entities.HallPictures;
 import com.sparta.halls.app.entities.Halls;
 import com.sparta.halls.app.entities.Pictures;
@@ -26,7 +28,7 @@ public class HallController {
         this.roomTypeService = roomTypeService;
     }
     @GetMapping("halls")
-    public String dummyMethod3(ModelMap modelMap) {
+    public String viewHalls(ModelMap modelMap) {
         Halls hall = hallService.getDefaultHall();
         modelMap.addAttribute("hall", hall);
         String pictureLocation = "";
@@ -44,7 +46,7 @@ public class HallController {
         }
         modelMap.addAttribute("logo", pictureLocation);
         modelMap.addAttribute("hallIm", imageLocation);
-        return "view/publicPages/halls";
+        return Pages.accessPage(Roles.PUBLIC, Pages.PUBLIC_VIEW_HALLS);
     }
 
     @GetMapping("selectedHall")
@@ -71,7 +73,7 @@ public class HallController {
 
         modelMap.addAttribute("roomTypes", roomTypesList);
 
-        return "view/publicPages/selectedHall";
+        return Pages.accessPage(Roles.PUBLIC, Pages.PUBLIC_VIEW_SELECTED_HALL);
     }
 
 
