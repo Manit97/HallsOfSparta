@@ -18,4 +18,19 @@ public class StudentService {
         Student student = studentRepository.getStudentByEmail(email);
         return student;
     }
+
+    public boolean addStudent(Student student){
+        studentRepository.save(student);
+        return true;
+    }
+
+    public boolean deleteStudent(int id){
+        studentRepository.deleteById(id);
+        return true;
+    }
+
+    public boolean updateStudent(Student student){
+        studentRepository.save(student);
+        return true;
+    }
 }
