@@ -5,13 +5,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Entity
 public class Noticeboard {
     private int postId;
     private Integer adminId;
     private String postHeader;
-    private Timestamp postDateTime;
+    private LocalDateTime postDateTime;
     private String postContent;
     private String urgency;
 
@@ -47,11 +48,11 @@ public class Noticeboard {
 
     @Basic
     @Column(name = "post_date_time")
-    public Timestamp getPostDateTime() {
+    public LocalDateTime getPostDateTime() {
         return postDateTime;
     }
 
-    public void setPostDateTime(Timestamp postDateTime) {
+    public void setPostDateTime(LocalDateTime postDateTime) {
         this.postDateTime = postDateTime;
     }
 

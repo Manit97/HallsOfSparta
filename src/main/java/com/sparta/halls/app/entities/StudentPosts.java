@@ -2,6 +2,7 @@ package com.sparta.halls.app.entities;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "student_posts", schema = "sparta_rooms")
@@ -10,7 +11,7 @@ public class StudentPosts {
     private Integer studentId;
     private String postHeader;
     private String postContent;
-    private Timestamp postDateTime;
+    private LocalDateTime postDateTime;
     private Student student;
 
     @OneToOne
@@ -65,11 +66,11 @@ public class StudentPosts {
 
     @Basic
     @Column(name = "post_date_time")
-    public Timestamp getPostDateTime() {
+    public LocalDateTime getPostDateTime() {
         return postDateTime;
     }
 
-    public void setPostDateTime(Timestamp postDateTime) {
+    public void setPostDateTime(LocalDateTime postDateTime) {
         this.postDateTime = postDateTime;
     }
 

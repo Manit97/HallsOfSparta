@@ -22,22 +22,22 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        <form>
+                    <form action="#" th:action="@{/studentBoard}" th:object="${newPost}" method="post">
+                        <div class="modal-body">
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Title</label>
-                                <input type="text" class="form-control" id="recipient-name">
+                                <input type="text" class="form-control" id="recipient-name" th:field="*{postHeader}">
                             </div>
                             <div class="form-group">
                                 <label for="message-text" class="col-form-label">Message:</label>
-                                <textarea class="form-control" id="message-text"></textarea>
+                                <textarea class="form-control" id="message-text" th:field="*{postContent}"></textarea>
                             </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Send message</button>
-                    </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Send message</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -51,7 +51,7 @@
                     <h5 class="card-title" th:text="${post.postHeader}">Topic</h5>
                     <p class="card-text" th:text="${post.postContent}">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
-                <div class="card-footer text-muted" th:text="${post.postDateTime}">
+                <div class="card-footer text-muted" th:text="'Date Posted:' + ${post.postDateTime}">
                     Date Posted:
                 </div>
             </div>
