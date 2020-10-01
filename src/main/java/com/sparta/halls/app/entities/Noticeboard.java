@@ -1,11 +1,9 @@
 package com.sparta.halls.app.entities;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 public class Noticeboard {
@@ -15,6 +13,16 @@ public class Noticeboard {
     private LocalDateTime postDateTime;
     private String postContent;
     private String urgency;
+    private Set<AdminPosts> adminPosts;
+
+    @OneToMany(mappedBy = "post")
+    public Set<AdminPosts> getAdminPosts() {
+        return adminPosts;
+    }
+
+    public void setAdminPosts(Set<AdminPosts> adminPosts) {
+        this.adminPosts = adminPosts;
+    }
 
     @Id
     @Column(name = "post_id")

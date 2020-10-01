@@ -1,6 +1,7 @@
 package com.sparta.halls.app.controllers;
 
 import com.sparta.halls.app.entities.Enquiries;
+import com.sparta.halls.app.entities.Rooms;
 import com.sparta.halls.app.entities.Student;
 import com.sparta.halls.app.services.EnquiriesService;
 import com.sparta.halls.app.services.StudentService;
@@ -65,5 +66,11 @@ public class AdminController {
         studentService.deleteStudent(studentId);
         return "view/adminPages/updateSuccess";
     }
+
+//    @GetMapping("/editRoomRecords")
+//    public String getRooms(Model model) {
+//        model.addAttribute("student", new Student());
+//        return "view/adminPages/editRoomRecords";
+//    }
 
 }
