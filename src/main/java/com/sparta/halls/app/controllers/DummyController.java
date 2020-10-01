@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class DummyController {
 
-    @GetMapping("/studentRecords")
-    public String dummyMethod1() {
-        return "view/adminPages/studentRecords";
-    }
+
 
 
 
