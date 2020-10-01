@@ -2,8 +2,6 @@ package com.sparta.halls.app.controllers;
 
 import com.sparta.halls.app.Pages;
 import com.sparta.halls.app.Roles;
-import com.sparta.halls.app.entities.Enquiries;
-import com.sparta.halls.app.entities.Halls;
 import com.sparta.halls.app.entities.Student;
 import com.sparta.halls.app.entities.StudentPosts;
 import com.sparta.halls.app.services.HallService;

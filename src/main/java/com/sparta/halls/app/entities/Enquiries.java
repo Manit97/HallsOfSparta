@@ -14,6 +14,7 @@ public class Enquiries {
     private String enquiryContent;
     private Integer hallId;
     private Integer enquiryTypeId;
+    private Integer publicRoomId;
 
     @Id
     @Column(name = "enquiry_id")
@@ -85,6 +86,16 @@ public class Enquiries {
         this.enquiryTypeId = enquiryTypeId;
     }
 
+    @Basic
+    @Column(name = "public_room_id")
+    public Integer getPublicRoomId() {
+        return publicRoomId;
+    }
+
+    public void setPublicRoomId(Integer publicRoomId) {
+        this.publicRoomId = publicRoomId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -104,6 +115,8 @@ public class Enquiries {
         if (hallId != null ? !hallId.equals(enquiries.hallId) : enquiries.hallId != null) return false;
         if (enquiryTypeId != null ? !enquiryTypeId.equals(enquiries.enquiryTypeId) : enquiries.enquiryTypeId != null)
             return false;
+        if (publicRoomId != null ? !publicRoomId.equals(enquiries.publicRoomId) : enquiries.publicRoomId != null)
+            return false;
 
         return true;
     }
@@ -117,6 +130,7 @@ public class Enquiries {
         result = 31 * result + (enquiryContent != null ? enquiryContent.hashCode() : 0);
         result = 31 * result + (hallId != null ? hallId.hashCode() : 0);
         result = 31 * result + (enquiryTypeId != null ? enquiryTypeId.hashCode() : 0);
+        result = 31 * result + (publicRoomId != null ? publicRoomId.hashCode() : 0);
         return result;
     }
 }

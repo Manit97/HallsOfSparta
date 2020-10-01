@@ -22,10 +22,10 @@ public class StudentController {
         return Pages.accessPage(Roles.STUDENT, Pages.STUDENT_RULES);
     }
 
-    @GetMapping("/deletePosts")
-    public String deletePostsPage() {
-        return Pages.accessPage(Roles.NOMINATED_STUDENT, Pages.NOM_STUDENT_DELETE_POST);
-    }
+//    @GetMapping("/deletePosts")
+//    public String deletePostsPage() {
+//        return Pages.accessPage(Roles.NOMINATED_STUDENT, Pages.NOM_STUDENT_DELETE_POST);
+//    }
 
     @GetMapping("/postSuccess")
     public String postSuccessfulPage() {
