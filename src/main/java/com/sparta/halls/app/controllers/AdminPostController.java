@@ -1,5 +1,7 @@
 package com.sparta.halls.app.controllers;
 
+import com.sparta.halls.app.Pages;
+import com.sparta.halls.app.Roles;
 import com.sparta.halls.app.entities.AdminPosts;
 import com.sparta.halls.app.entities.Admins;
 import com.sparta.halls.app.entities.Noticeboard;
@@ -33,7 +35,7 @@ public class AdminPostController {
     }
 
     @GetMapping("/adminBoard")
-    public String dummyMethod2(Model model) {
+    public String adminNoticeBoard(Model model) {
         List<Noticeboard> posts = noticeBoardService.getAllPosts();
         List<Admins> admins = adminService.getAdmins();
         List<Admins> staff = new ArrayList<>();
@@ -49,19 +51,19 @@ public class AdminPostController {
         model.addAttribute("admins", admins);
         model.addAttribute("posts", array);
         model.addAttribute("newPost", new Noticeboard());
-        return "view/adminPages/adminBoard";
+        return Pages.accessPage(Roles.STUDENT, Pages.ADMIN_NOTICE_BOARD);
     }
     @PostMapping("/makePost")
     public String makePost(@ModelAttribute Noticeboard newPost, Model model){
         newPost.setPostDateTime(LocalDateTime.now());
         noticeBoardService.addPost(newPost);
-        return "view/adminPages/postSuccess";
+        return Pages.accessPage(Roles.ADMIN, Pages.ADMIN_POST_SUCCESSFUL);
     }
 
     @PostMapping("/deleteAdminPost")
     public String deletePost(@RequestParam int postId, Model model){
         noticeBoardService.deletePost(postId);
-        return "view/adminPages/postSuccess";
+        return Pages.accessPage(Roles.ADMIN, Pages.ADMIN_DELETE_POST_SUCCESSFUL);
     }
 
     @PostMapping("/assignAdmin")
@@ -70,6 +72,6 @@ public class AdminPostController {
         adminPosts.setAdminId(adminId);
         adminPosts.setPostId(postId);
         adminPostService.addPost(adminPosts);
-        return "view/adminPages/postSuccess";
+        return Pages.accessPage(Roles.ADMIN, Pages.ADMIN_ASSIGNMENT_SUCCESSFUL);
     }
 }
