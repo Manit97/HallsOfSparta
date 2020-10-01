@@ -13,20 +13,16 @@ public class PublicController {
         return "view/publicPages/welcome";
     }
 
-    @GetMapping("/success")
-    public String dummyMethod6() {
-        return "view/publicPages/success";
-    }
+//    @GetMapping("/success")
+//    public String dummyMethod6() {
+//        return "view/publicPages/success";
+//    }
 
-    @GetMapping("/deletePosts")
-    public String dummyMethod8() {
-        return "view/studentPages/deletePosts";
-    }
 
-    @GetMapping("/postSuccess")
-    public String dummyMethod9() {
-        return "view/studentPages/postSuccess";
-    }
+//    @GetMapping("/postSuccess")
+//    public String dummyMethod9() {
+//        return "view/studentPages/postSuccess";
+//    }
 
     @GetMapping("/viewPublicEnquiries")
     public String dummyMethod10() {
