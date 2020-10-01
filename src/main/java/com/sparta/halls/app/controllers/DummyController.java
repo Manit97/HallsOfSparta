@@ -13,6 +13,16 @@ public class DummyController {
         return "view/adminPages/studentRecords";
     }
 
+    @GetMapping("/adminBoard")
+    public String dummyMethod2() {
+        return "view/adminPages/adminBoard";
+    }
+
+    @GetMapping("/editRoomRecords")
+    public String dummyMethod3() {
+        return "view/adminPages/editRoomRecords";
+    }
+
 
 
 

@@ -20,15 +20,15 @@ public class PublicController {
         return Pages.PUBLIC_ENQUIRY_SENT;
     }
 
-    @GetMapping("/viewPublicEnquiries")
-    public String dummyMethod10() {
-        return Pages.accessPage(Roles.ADMIN, Pages.PUBLIC_WELCOME);
-    }
-
-    @GetMapping("/viewMaintenancePosts")
-    public String dummyMethod11() {
-        return "view/adminPages/viewMaintenancePosts";
-    }
+//    @GetMapping("/viewPublicEnquiries")
+//    public String dummyMethod10() {
+//        return Pages.accessPage(Roles.ADMIN, Pages.PUBLIC_WELCOME);
+//    }
+//
+//    @GetMapping("/viewMaintenancePosts")
+//    public String dummyMethod11() {
+//        return "view/adminPages/viewMaintenancePosts";
+//    }
 
 //    @GetMapping("/viewPublicEnquiries")
 //    public String dummyMethod10() {
