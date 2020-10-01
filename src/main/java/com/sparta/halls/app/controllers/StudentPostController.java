@@ -15,7 +15,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpServletRequest;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -26,12 +30,16 @@ public class StudentPostController {
     private HallService hallService;
     private StudentService studentService;
 
+
     @Autowired
     public StudentPostController(StudentPostService studentPostService, HallService hallService, StudentService studentService) {
         this.studentPostService = studentPostService;
         this.hallService = hallService;
         this.studentService=studentService;
     }
+
+
+
 
     @GetMapping("/studentBoard")
     public String getStudentPosts(Model model){
@@ -40,12 +48,22 @@ public class StudentPostController {
         Collections.reverse(array);
         model.addAttribute("posts", array);
         model.addAttribute("newPost", new StudentPosts());
-        model.addAttribute("email", new Student());
         return "view/studentPages/studentBoard";
     }
     @PostMapping("/studentBoard")
-    public String postStudentPost(@ModelAttribute StudentPosts studentPost, @ModelAttribute Student email, Model model){
-        studentPostService.addStudentPost(studentPost);
+    public String postStudentPost(@ModelAttribute StudentPosts newPost, Model model){
+        //studentPostService.addStudentPost(studentPost);
+        HttpServletRequest request =
+                ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes())
+                        .getRequest();
+
+        //String emailName = email.getEmail();
+        String emailName = request.getRemoteUser();
+        Student student =studentService.getStudentByEmail(emailName);
+        newPost.setStudentId(student.getStudentId());
+        newPost.setPostDateTime(LocalDateTime.now());
+        studentPostService.addStudentPost(newPost);
+
         return "view/publicPages/success";
     }
     @GetMapping("/studentPostsModeration")
