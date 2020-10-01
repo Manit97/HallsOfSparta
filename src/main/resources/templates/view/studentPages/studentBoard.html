@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/masterTemplate :: layout(~{::head}, ~{::nav}, ~{::main})}">
+<head th:replace="~{fragments/head :: headFragment(title='Sparta Global - Home')}">
+    <meta charset="UTF-8">
+    <link rel ="stylesheet" type="text/css" media="all" href="static/css/style.css"/>
+    <link rel ="stylesheet" type="text/css" media="all" href="webjars/bootstrap/4.5.2/css/bootstrap.css"  />
+    <title>Default Title</title>
+</head>
+<body>
+<nav th:replace="~{fragments/publicNavigation}">Navigation</nav>
+<main>
+    <div class="jumbotron">
+        <h5>Student Notice Board</h5>
+        <hr class="my-4"></hr>
+        <div class="container-fluid">
+            <div class="card border-secondary mb-3 container-fluid" >
+                <div class="card-header">Header</div>
+                <div class="card-body text-secondary">
+                    <h5 class="card-title">Secondary card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <div class="card-footer text-muted">
+                    2 days ago
+                </div>
+            </div>
+        </div>
+        <hr class="my-4"></hr>
+    </div>
+</main>
+</body>
+</html>

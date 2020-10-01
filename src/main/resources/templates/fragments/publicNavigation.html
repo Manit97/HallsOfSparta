@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">University of Sparta</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" th:href="@{/welcome}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/halls}">Halls</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/aboutus}">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/managementStaff}">Management Staff</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/studentBoard}">Student Notice Board</a>
+            </li>
+            <li class="float-right nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" th:href="@{/enquiries}">Enquiries</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" th:if="${#httpServletRequest.getRemoteUser() == null}" th:href="@{/login}">Login</a>
+                    <a class="dropdown-item" th:if="${#httpServletRequest.getRemoteUser() != null}" th:href="@{/logout}">Logout</a>
+                </div>
+            </li>
+            <li class="float-right nav-item dropdown" th:if="${#httpServletRequest.getRemoteUser() != null}">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Student Options
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown2" >
+                    <a class="dropdown-item" th:href="@{/rulesRegulations}">Rules and Regulations</a>
+                    <a class="dropdown-item" th:href="@{/managementStaff}">Management Staff</a>
+                    <a class="dropdown-item" th:href="@{/maintenanceRequest}">Maintenance Request</a>
+                    <a class="dropdown-item" th:href="@{/roomBooking}">Room Booking Request</a>
+                    <div class="dropdown-divider"></div>
+                </div>
+            </li>
+            <li class="float-right nav-item dropdown" th:if="${#httpServletRequest.isUserInRole('ADMIN') == true}">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Student Options
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown3" >
+                    <a class="dropdown-item" th:href="@{/rulesRegulations}">Rules and Regulations</a>
+                    <a class="dropdown-item" th:href="@{/managementStaff}">Management Staff</a>
+                    <a class="dropdown-item" th:href="@{/maintenanceRequest}">Maintenance Request</a>
+                    <a class="dropdown-item" th:href="@{/roomBooking}">Room Booking Request</a>
+                    <div class="dropdown-divider"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <a class="navbar-text" th:if="${#httpServletRequest.getRemoteUser() != null}">
+        Signed in with: [[${#httpServletRequest.getRemoteUser()}]]
+    </a>
+</nav>
+</body>
+</html>
