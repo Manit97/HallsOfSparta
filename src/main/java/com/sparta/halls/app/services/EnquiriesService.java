@@ -5,6 +5,8 @@ import com.sparta.halls.app.repositories.EnquiriesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class EnquiriesService {
     private final EnquiriesRepository enquiriesRepository;
@@ -22,10 +24,14 @@ public class EnquiriesService {
         enquiries.setEnquirerNumber("testnumber");
         enquiries.setHallId(1);
         addEnquiry(enquiries);
-
     }
     public boolean addEnquiry(Enquiries enquiry){
         enquiriesRepository.save(enquiry);
         return true;
+    }
+
+    public List<Enquiries> getEnquiriesByType(int id){
+        List<Enquiries> enquiries = enquiriesRepository.findAllByeAndEnquiryTypeId(id);
+        return enquiries;
     }
 }

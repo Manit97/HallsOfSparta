@@ -16,34 +16,40 @@
             <h5>Student Notice Board</h5>
             <hr class="my-4"></hr>
             <br/>
-            <div class="card border-secondary mb-3 container-fluid" >
-                <div class="card-header">Student Name:</div>
-                <div class="card-body text-secondary">
-                    <h5 class="card-title">Topic</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button type="button" class="btn btn-primary btn-danger" data-toggle="modal" data-target="#staticBackdrop">
-                        Delete
-                    </button>
-                    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="staticBackdropLabel">Delete</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    Are you sure you want to delete?
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                    <button type="button" class="btn btn-primary">Delete</button>
-                                </div>
-                            </div>
-                        </div>
+            <div th:each="post : ${posts}" class="card border-secondary mb-3 container-fluid" >
+                <form action="#" th:action="@{/deletePosts}" method="post">
+                    <div class="card-header" th:text="${post.student.firstName} + ' ' + ${post.student.lastName}">Student Name:</div>
+                    <div class="card-body text-secondary" th:value="${post.postId}">
+                        <h6 class = "card-title" th:name="postId" th:id="${post.postId}" th:text="${post.postId}"></h6>
+                        <h5 class="card-title" th:text="${post.postHeader}">Topic</h5>
+                        <p class="card-text" th:text="${post.postContent}">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <button type="submit" th:name="postId" th:value="${post.postId}" class="btn btn-primary" >Delete</button>
+<!--                        <button type="button" class="btn btn-primary btn-danger" data-toggle="modal" data-target="#staticBackdrop">-->
+<!--                            Delete-->
+<!--                        </button>-->
+<!--                        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">-->
+<!--                            <div class="modal-dialog">-->
+<!--                                <div class="modal-content">-->
+<!--                                    <div class="modal-header">-->
+<!--                                        <h5 class="modal-title" id="staticBackdropLabel">Delete</h5>-->
+<!--                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--                                            <span aria-hidden="true">&times;</span>-->
+<!--                                        </button>-->
+<!--                                    </div>-->
+
+<!--                                        <div class="modal-body">-->
+<!--                                            Are you sure you want to delete?-->
+<!--                                        </div>-->
+<!--                                        <div class="modal-footer">-->
+<!--                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>-->
+<!--                                            <button type="submit" th:name="postId" data-target="#post.postId" th:value="${post.postId}" class="btn btn-primary" >Delete</button>-->
+<!--                                        </div>-->
+
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
                     </div>
-                </div>
+                </form>
                 <div class="card-footer text-muted">
                     Date Posted:
                 </div>
