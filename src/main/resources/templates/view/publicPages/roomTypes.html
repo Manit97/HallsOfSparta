@@ -14,7 +14,8 @@
         <hr class="my-4"></hr>
         <div class="card-deck">
             <div th:each="roomType : ${rooms}" class="card">
-                <img th:src="${roomPics.get(roomType.getRoomTypeId())}" class="card-img-top" alt="...">
+                <img src="images/roomTypeStudio.png" class="card-img-top" alt="...">
+<!--                <img th:src="${roomPics.get(roomType.getRoomTypeId())}" class="card-img-top" alt="...">-->
                 <div class="card-body">
                     <h5 class="card-title" th:text="${roomType.roomType}">The 300</h5>
                     <p class="card-text" th:text="${roomType.roomDescription}">A prestigious hall with a variety of different types of rooms to fit your needs.</p>
