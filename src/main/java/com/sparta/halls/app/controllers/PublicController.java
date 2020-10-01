@@ -19,20 +19,20 @@ public class PublicController {
         return Pages.PUBLIC_ENQUIRY_SENT;
     }
 
-    @GetMapping("/viewPublicEnquiries")
-    public String dummyMethod10() {
-        return "view/adminPages/viewPublicEnquiries";
-    }
-
-    @GetMapping("/viewMaintenancePosts")
-    public String dummyMethod11() {
-        return "view/adminPages/viewMaintenancePosts";
-    }
-
-    @GetMapping("/viewRoomBookings")
-    public String dummyMethod12() {
-        return "view/adminPages/viewRoomBookings";
-    }
+//    @GetMapping("/viewPublicEnquiries")
+//    public String dummyMethod10() {
+//        return "view/adminPages/viewPublicEnquiries";
+//    }
+//
+//    @GetMapping("/viewMaintenancePosts")
+//    public String dummyMethod11() {
+//        return "view/adminPages/viewMaintenancePosts";
+//    }
+//
+//    @GetMapping("/viewRoomBookings")
+//    public String dummyMethod12() {
+//        return "view/adminPages/viewRoomBookings";
+//    }
 
     @GetMapping("/deleteSuccess")
     public String dummyMethod13() {
