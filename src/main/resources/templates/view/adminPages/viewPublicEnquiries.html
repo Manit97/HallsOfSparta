@@ -21,15 +21,17 @@
                     <th scope="col">Email</th>
                     <th scope="col">Phone Number</th>
                     <th scope="col">Enquiry</th>
+                    <th score="col">Hall Id</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Public Full Name</td>
-                    <td>Public Email Address</td>
-                    <td>Public Phone Number</td>
-                    <td>Public Enquiry Details</td>
+                <tr th:each="enq : ${enquiries}">
+                    <th scope="row" th:text="${enq.enquiryId}">1</th>
+                    <td th:text="${enq.enquirerName}">Public Full Name</td>
+                    <td th:text="${enq.enquirerEmail}">Public Email Address</td>
+                    <td th:text="${enq.enquirerNumber}">Public Phone Number</td>
+                    <td th:text="${enq.enquiryContent}">Public Enquiry Details</td>
+                    <td th:text="${enq.hallId}">Hall</td>
                 </tr>
                 </tbody>
             </table>

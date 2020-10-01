@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/masterTemplate :: layout(~{::head}, ~{::nav}, ~{::main})}">
+<head th:replace="~{fragments/head :: headFragment(title='Sparta Global - Home')}">
+    <meta charset="UTF-8">
+    <link rel ="stylesheet" type="text/css" media="all" href="static/css/style.css"/>
+    <link rel ="stylesheet" type="text/css" media="all" href="webjars/bootstrap/4.5.2/css/bootstrap.css"  />
+    <title>Default Title</title>
+</head>
+<body>
+<nav th:replace="~{fragments/publicNavigation}">Navigation</nav>
+<main>
+    <div class="jumbotron">
+        <h5>Add Student Record</h5>
+        <hr class="my-4"></hr>
+        <div class="container">
+            <form action="#" method="post">
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="studentid">Student ID</label>
+                        <input type="text" class="form-control shadow p-3 mb-5 bg-white rounded" id="studentid" placeholder="Please Enter Student ID"  required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstname">First Name</label>
+                        <input type="text" class="form-control shadow p-3 mb-5 bg-white rounded" id="firstname" placeholder="First Name"  required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" class="form-control shadow p-3 mb-5 bg-white rounded" id="lastname" placeholder="Last Name"  required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control shadow p-3 mb-5 bg-white rounded" id="email" placeholder="Email Address" aria-describedby="emailHelp">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="number">Mobile Number</label>
+                        <input type="text" class="form-control shadow p-3 mb-5 bg-white rounded" id="number" placeholder="Mobile Number"  required>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <select class="form-control" id="dropHalls" name="hallId" >
+                        <option value="0">Please Select a hall</option>
+                        <option ></option>
+                    </select>
+                </div>
+                <br/>
+                <div class="dropdown">
+                    <select class="form-control" id="dropRooms" name="roomID" >
+                        <option value="0">Please Select a Room</option>
+                        <option ></option>
+                    </select>
+                </div>
+                <br />
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                        <label class="form-check-label" for="invalidCheck2">
+                            Are you sure you would like to add this student?
+                        </label>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-success" type="submit">Add</button>
+            </form>
+        </div>
+        <hr class="my-4"></hr>
+    </div>
+    <br/>
+    <div class="jumbotron">
+        <h5>Edit Student Record</h5>
+        <hr class="my-4"></hr>
+        <div class="container">
+            <form action="#" method="post">
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="studentid1">Student ID</label>
+                        <input type="text" class="form-control shadow p-3 mb-5 bg-white rounded" id="studentid1" placeholder="Please Enter Student ID"  required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstname1">First Name</label>
+                        <input type="text" class="form-control shadow p-3 mb-5 bg-white rounded" id="firstname1" placeholder="First Name"  required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastname1">Last Name</label>
+                        <input type="text" class="form-control shadow p-3 mb-5 bg-white rounded" id="lastname1" placeholder="Last Name"  required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="email1">Email address</label>
+                        <input type="email" class="form-control shadow p-3 mb-5 bg-white rounded" id="email1" placeholder="Email Address" aria-describedby="emailHelp">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="number1">Mobile Number</label>
+                        <input type="text" class="form-control shadow p-3 mb-5 bg-white rounded" id="number1" placeholder="Mobile Number"  required>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <select class="form-control" id="dropHalls1" name="hallId" >
+                        <option value="0">Please Select a hall</option>
+                        <option ></option>
+                    </select>
+                </div>
+                <br/>
+                <div class="dropdown">
+                    <select class="form-control" id="dropRooms1" name="roomID" >
+                        <option value="0">Please Select a Room</option>
+                        <option ></option>
+                    </select>
+                </div>
+                <br />
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck3" required>
+                        <label class="form-check-label" for="invalidCheck3">
+                            Are you sure you would like edit this student's details?
+                        </label>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-warning" type="submit">Edit</button>
+            </form>
+        </div>
+        <hr class="my-4"></hr>
+    </div>
+    <br/>
+    <div class="jumbotron">
+        <h5>Delete Student Record</h5>
+        <hr class="my-4"></hr>
+        <div class="container">
+            <form action="#" method="post">
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="studentid2">Student ID</label>
+                        <input type="text" class="form-control shadow p-3 mb-5 bg-white rounded" id="studentid2" placeholder="Please Enter Student ID"  required>
+                    </div>
+                </div>
+                <br />
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck4" required>
+                        <label class="form-check-label" for="invalidCheck3">
+                            Are you sure you would like delete this student record?
+                        </label>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-danger" type="submit">Delete</button>
+            </form>
+        </div>
+        <hr class="my-4"></hr>
+    </div>
+
+</main>
+</body>
+</html>

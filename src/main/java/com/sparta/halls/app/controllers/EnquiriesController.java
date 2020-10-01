@@ -4,8 +4,10 @@ import com.sparta.halls.app.Pages;
 import com.sparta.halls.app.Roles;
 import com.sparta.halls.app.entities.Enquiries;
 import com.sparta.halls.app.entities.Halls;
+import com.sparta.halls.app.entities.PublicRooms;
 import com.sparta.halls.app.services.EnquiriesService;
 import com.sparta.halls.app.services.HallService;
+import com.sparta.halls.app.services.PublicRoomsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,11 +22,13 @@ public class EnquiriesController {
 
     private EnquiriesService enquiriesService;
     private HallService hallService;
+    private PublicRoomsService publicRoomsService;
 
     @Autowired
-    public EnquiriesController(EnquiriesService enquiriesService, HallService  hallService) {
+    public EnquiriesController(EnquiriesService enquiriesService, HallService  hallService, PublicRoomsService publicRoomsService) {
         this.enquiriesService = enquiriesService;
         this.hallService = hallService;
+        this.publicRoomsService = publicRoomsService;
     }
 
     @GetMapping("/enquiries")
@@ -60,7 +64,9 @@ public class EnquiriesController {
     @GetMapping("/roomBooking")
     public String getBookingRequest(Model model){
         List<Halls> halls = hallService.getAllHalls();
+        List<PublicRooms> rooms = publicRoomsService.getAllRooms();
         model.addAttribute("halls", halls);
+        model.addAttribute("rooms", rooms);
         model.addAttribute("enquiry", new Enquiries());
         return Pages.accessPage(Roles.STUDENT, Pages.STUDENT_BOOKING_REQUEST);
     }
