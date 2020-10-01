@@ -63,18 +63,20 @@ public class StudentPostController {
       
         return Pages.accessPage(Roles.STUDENT, Pages.STUDENT_POST_SUCCESSFUL);
     }
-  
+
+    /*
     @GetMapping("/studentPostsModeration")
     public String getStudentPostsModeration(ModelMap modelMap){
         List<StudentPosts> posts = studentPostService.getAllStudentPosts();
         modelMap.addAttribute("posts", posts);
-        return "view/publicPages/error";
+        return Pages.accessPage(Roles.STUDENT, Pages.STUDENT_POST_SUCCESSFUL);
     }
     @PostMapping("/studentPostsModeration")
     public String getModeration(@RequestParam int postId, ModelMap modelMap){
         studentPostService.deleteStudentPost(postId);
         return "view/publicPages/success";
     }
+    */
 
     @GetMapping("/deletePosts")
     public String dummyMethod8(Model model) {
@@ -82,12 +84,13 @@ public class StudentPostController {
         ArrayList<StudentPosts> array = new ArrayList<>(posts);
         Collections.reverse(array);
         model.addAttribute("posts", array);
-        return "view/studentPages/deletePosts";
+        return Pages.accessPage(Roles.STUDENT, Pages.NOM_STUDENT_DELETE_POST);
     }
+
     @PostMapping("/deletePosts")
     public String deletePost(@RequestParam int postId, Model model){
         studentPostService.deleteStudentPost(postId);
-        return "view/studentPages/postSuccess";
+        return Pages.accessPage(Roles.STUDENT, Pages.NOM_STUDENT_DELETE_SUCCESS);
     }
 
 //    @GetMapping("/makePost")

@@ -34,10 +34,12 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         // resident, nomResident, admin
         auth.inMemoryAuthentication()
-                .withUser("user@sparta.ac.uk").password("{noop}u").roles(Roles.STUDENT)
+                .withUser("student@sparta.ac.uk").password("{noop}s").roles(Roles.STUDENT)
                 .and()
-                .withUser("admin@sparta.ac.uk").password("{noop}a").roles(Roles.ADMIN,Roles.STUDENT)
+                .withUser("admin@sparta.ac.uk").password("{noop}a").roles(Roles.ADMIN, Roles.STUDENT)
                 .and()
-                .withUser("third@sparta.ac.uk").password("{noop}t").roles(Roles.PUBLIC);
+                .withUser("public@sparta.ac.uk").password("{noop}p").roles(Roles.PUBLIC)
+                .and()
+                .withUser("nominated@sparta.ac.uk").password("{noop}n").roles(Roles.STUDENT, Roles.NOMINATED_STUDENT);
     }
 }
