@@ -1,5 +1,7 @@
 package com.sparta.halls.app.controllers;
 
+import com.sparta.halls.app.Pages;
+import com.sparta.halls.app.Roles;
 import com.sparta.halls.app.entities.HallPictures;
 import com.sparta.halls.app.entities.RoomTypePictures;
 import com.sparta.halls.app.entities.RoomTypes;
@@ -21,6 +23,7 @@ public class RoomController {
     public RoomController(RoomTypeService roomTypeService) {
         this.roomTypeService = roomTypeService;
     }
+
     @GetMapping("/selectedRoom")
     public String getSelectedRoom(@RequestParam int roomId, ModelMap modelMap){
         RoomTypes roomType = roomTypeService.getRoomType(roomId).get();
@@ -40,7 +43,7 @@ public class RoomController {
         }
         modelMap.addAttribute("logo", pictureLocation);
         modelMap.addAttribute("roomIm", imageLocation);
-        return "view/publicPages/selectedRoom";
+        return Pages.accessPage(Roles.PUBLIC, Pages.PUBLIC_VIEW_SELECTED_ROOM);
     }
 
 }

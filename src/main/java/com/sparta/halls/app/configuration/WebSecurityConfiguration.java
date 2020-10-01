@@ -1,5 +1,6 @@
 package com.sparta.halls.app.configuration;
 
+import com.sparta.halls.app.Roles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -33,10 +34,10 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         // resident, nomResident, admin
         auth.inMemoryAuthentication()
-                .withUser("user@sparta.com").password("{noop}u").roles("USER")
+                .withUser("user@sparta.ac.uk").password("{noop}u").roles(Roles.STUDENT)
                 .and()
-                .withUser("admin@sparta.com").password("{noop}a").roles("ADMIN")
+                .withUser("admin@sparta.ac.uk").password("{noop}a").roles(Roles.ADMIN)
                 .and()
-                .withUser("third").password("{noop}t").roles("THIRD");
+                .withUser("third@sparta.ac.uk").password("{noop}t").roles(Roles.PUBLIC);
     }
 }

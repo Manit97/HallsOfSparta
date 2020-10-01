@@ -1,5 +1,7 @@
 package com.sparta.halls.app.controllers;
 
+import com.sparta.halls.app.Pages;
+import com.sparta.halls.app.Roles;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -8,26 +10,28 @@ public class SecurityController {
 
     @GetMapping("/")
     public String dummyMethod() {
-        return "view/publicPages/welcome";
+        return Pages.accessPage(Roles.PUBLIC, Pages.PUBLIC_WELCOME);
     }
 
     @GetMapping("/login")
     public String loginPage() {
-        return "view/publicPages/login";
+        return Pages.accessPage(Roles.PUBLIC, Pages.PUBLIC_LOGIN);
     }
 
     @GetMapping("/logout")
     public String logoutPage() {
-        return "view/publicPages/login?logout";
+        return Pages.accessPage(Roles.PUBLIC, Pages.PUBLIC_LOGOUT);
     }
 
+    /*
     @GetMapping("/signedin")
     public String signedinPage() {
         return "view/publicPages/signedin";
     }
+    */
 
     @GetMapping("/error")
     public String errorPage() {
-        return "view/publicPages/error";
+        return Pages.accessPage(Roles.PUBLIC, Pages.ERROR_PAGE);
     }
 }

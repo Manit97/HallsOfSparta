@@ -1,5 +1,7 @@
 package com.sparta.halls.app.controllers;
 
+import com.sparta.halls.app.Pages;
+import com.sparta.halls.app.Roles;
 import com.sparta.halls.app.entities.Admins;
 import com.sparta.halls.app.services.AdminService;
 import org.springframework.stereotype.Controller;
@@ -20,6 +22,6 @@ public class StaffController {
     public String getManagement(ModelMap modelMap){
         List<Admins> admins = adminService.getAdmins();
         modelMap.addAttribute("admins", admins);
-        return"view/studentPages/managementStaff";
+        return Pages.accessPage(Roles.STUDENT, Pages.STUDENT_VIEW_MANAGEMENT);
     }
 }

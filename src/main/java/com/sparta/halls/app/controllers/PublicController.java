@@ -1,5 +1,6 @@
 package com.sparta.halls.app.controllers;
 
+import com.sparta.halls.app.Pages;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,24 +11,12 @@ public class PublicController {
 
     @GetMapping("/welcome")
     public String dummyMethod5() {
-        return "view/publicPages/welcome";
+        return Pages.PUBLIC_WELCOME;
     }
 
     @GetMapping("/success")
     public String dummyMethod6() {
-        return "view/publicPages/success";
-    }
-
-
-
-    @GetMapping("/deletePosts")
-    public String dummyMethod8() {
-        return "view/studentPages/deletePosts";
-    }
-
-    @GetMapping("/postSuccess")
-    public String dummyMethod9() {
-        return "view/studentPages/postSuccess";
+        return Pages.PUBLIC_ENQUIRY_SENT;
     }
 
 
