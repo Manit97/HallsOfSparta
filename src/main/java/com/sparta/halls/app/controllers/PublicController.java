@@ -18,8 +18,6 @@ public class PublicController {
         return "view/publicPages/success";
     }
 
-
-
     @GetMapping("/deletePosts")
     public String dummyMethod8() {
         return "view/studentPages/deletePosts";
@@ -28,6 +26,16 @@ public class PublicController {
     @GetMapping("/postSuccess")
     public String dummyMethod9() {
         return "view/studentPages/postSuccess";
+    }
+
+    @GetMapping("/viewPublicEnquiries")
+    public String dummyMethod10() {
+        return "view/adminPages/viewPublicEnquiries";
+    }
+
+    @GetMapping("/deleteSuccess")
+    public String dummyMethod11() {
+        return "view/studentPages/deleteSuccess";
     }
 
 
