@@ -84,13 +84,13 @@ public class StudentPostController {
         ArrayList<StudentPosts> array = new ArrayList<>(posts);
         Collections.reverse(array);
         model.addAttribute("posts", array);
-        return Pages.accessPage(Roles.STUDENT, Pages.NOM_STUDENT_DELETE_POST);
+        return Pages.accessPage(Roles.NOMINATED_STUDENT, Pages.NOM_STUDENT_DELETE_POST);
     }
 
     @PostMapping("/deletePosts")
     public String deletePost(@RequestParam int postId, Model model){
         studentPostService.deleteStudentPost(postId);
-        return Pages.accessPage(Roles.STUDENT, Pages.NOM_STUDENT_DELETE_SUCCESS);
+        return Pages.accessPage(Roles.NOMINATED_STUDENT, Pages.NOM_STUDENT_DELETE_SUCCESS);
     }
 
 //    @GetMapping("/makePost")

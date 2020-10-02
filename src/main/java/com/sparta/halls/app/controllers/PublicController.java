@@ -17,7 +17,7 @@ public class PublicController {
 
     @GetMapping("/success")
     public String dummyMethod6() {
-        return Pages.PUBLIC_ENQUIRY_SENT;
+        return Pages.accessPage(Roles.PUBLIC, Pages.PUBLIC_ENQUIRY_SENT);
     }
 
 //    @GetMapping("/viewPublicEnquiries")
@@ -44,9 +44,4 @@ public class PublicController {
 //    public String dummyMethod12() {
 //        return "view/adminPages/viewRoomBookings";
 //    }
-
-    @GetMapping("/deleteSuccess")
-    public String dummyMethod13() {
-        return "view/studentPages/deleteSuccess";
-    }
 }
