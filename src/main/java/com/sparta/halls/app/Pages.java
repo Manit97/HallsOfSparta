@@ -19,7 +19,6 @@ public class Pages {
     public static final String PUBLIC_VIEW_SELECTED_ROOM    = "view/publicPages/roomTypes";
     public static final String PUBLIC_VIEW_ROOM_TYPES       = "view/publicPages/roomTypes";
     public static final String PUBLIC_VIEW_SELECTED_HALL    = "view/publicPages/selectedHall";
-
     // == STUDENT PAGES =================================================================================
     public static final String STUDENT_MAINTENANCE_REQUEST  = "view/studentPages/maintenanceRequest";
     public static final String STUDENT_BOOKING_REQUEST      = "view/studentPages/roomBooking";
@@ -31,17 +30,18 @@ public class Pages {
     public static final String STUDENT_VIEW_MANAGEMENT      = "view/studentPages/managementStaff";
     public static final String NOM_STUDENT_DELETE_POST      = "view/studentPages/deletePosts";
     public static final String NOM_STUDENT_DELETE_SUCCESS   = "view/studentPages/deleteSuccess";
-
     // == ADMIN PAGES ===================================================================================
     public static final String ADMIN_VIEW_MAINTENANCE_POSTS = "view/adminPages/viewMaintenancePosts";
     public static final String ADMIN_VIEW_PUBLIC_ENQUIRIES  = "view/adminPages/viewPublicEnquiries";
     public static final String ADMIN_VIEW_ROOM_BOOKINGS     = "view/adminPages/viewRoomBookings";
-
-
-
-
-
-    // == ERROR ===================================================================================
+    public static final String ADMIN_MANAGE_STUDENT_RECORDS = "view/adminPages/studentRecords";
+    public static final String ADMIN_ADD_RECORD_SUCCESS     = "view/adminPages/updateSuccess";
+    public static final String ADMIN_DELETE_RECORD_SUCCESS  = "view/adminPages/updateSuccess";
+    public static final String ADMIN_NOTICE_BOARD           = "view/adminPages/adminBoard";
+    public static final String ADMIN_POST_SUCCESSFUL        = "view/adminPages/postSuccess";
+    public static final String ADMIN_DELETE_POST_SUCCESSFUL = "view/adminPages/postSuccess";
+    public static final String ADMIN_ASSIGNMENT_SUCCESSFUL  = "view/adminPages/postSuccess";
+    // == ERROR ==========================================================================================
     public static final String ERROR_PAGE                    = "view/publicPages/error";
 
 
@@ -50,13 +50,23 @@ public class Pages {
                 ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes())
                         .getRequest();
 
+        // if user is already logged in, skip login page and go to welcome page instead
+        if ((request.getRemoteUser() != null) && (expectedPage.equals(PUBLIC_LOGIN) || expectedPage.equals(PUBLIC_LOGIN_ERROR))) {
+            return PUBLIC_WELCOME;
+        }
+
+        // if the page is public (anyone can access), then go to that page
         if (accessRole.equals(Roles.PUBLIC)) {
             return expectedPage;
-        } else if (request != null) {
+        }
+
+        // if the user's role matches the access level of the page, or the user is an admin (can see anything),then go to that page
+        if (request != null) {
             if (request.isUserInRole(accessRole) || request.isUserInRole(Roles.ADMIN)) {
                 return expectedPage;
             }
         }
+
         return ERROR_PAGE;
     }
 }

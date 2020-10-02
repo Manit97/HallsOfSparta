@@ -13,11 +13,11 @@
         <h5>Add or Edit Room Records</h5>
         <hr class="my-4"></hr>
         <div class="container">
-            <form action="#" method="post">
+            <form action="#" th:action="@{/changeOccupant}" th:object="${student}" method="post">
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
                         <label for="studentid">Student ID</label>
-                        <input type="text" class="form-control shadow p-3 mb-5 bg-white rounded" id="studentid" placeholder="Please Enter the Student ID"  required>
+                        <input type="text" class="form-control shadow p-3 mb-5 bg-white rounded" id="studentid" placeholder="Please Enter the Student ID"  th:field="*{student}"required>
                     </div>
                 </div>
                 <div class="form-row">
