@@ -7,3 +7,23 @@
 .wrapper{
     text-align: center;
 }
+.footer{
+    position: sticky;
+    left: 0;
+    bottom: 0;
+}
+.navbar{
+    background-color: darkorchid;
+}
+.jumbotron{
+    color: darkorchid;
+}
+.body{
+    background-color: gold;
+}
+.cardcolor{
+    background-color: darkorchid;
+}
+.footer{
+    background-color: darkorchid;
+}
