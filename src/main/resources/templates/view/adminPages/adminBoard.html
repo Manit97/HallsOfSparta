@@ -45,6 +45,32 @@
             <br/>
             <h5>Admin Notice Board</h5>
             <br/>
+
+            <div class="card border-secondary mb-3 container-fluid" >
+                <div class="card-header" >Notice-Type</div>
+                <div class="card-body text-secondary">
+                    <h5 class="card-title" >Topic</h5>
+                    <p class="card-text" >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <form>
+                        <div class="dropdown">
+                            <div class="btn">
+                                <select class="form-control" id="dropAdmins" name="adminId" >
+                                    <option value="0">Select Staff Members</option>
+                                    <option ></option>
+                                </select>
+                            </div>
+                        </div>
+                    <br/>
+                    <button type="submit" class="btn btn-primary btn-success" >Assign Staff</button>
+                    <button type="submit" class="btn btn-primary btn-danger" >Delete</button>
+                    </form>
+                </div>
+                <div class="card-footer text-muted">
+                    <a>Staff Assigned:</a>
+                    <br/>
+                    <a>Date Posted:</a>
+                </div>
+
             <div th:each="post : ${posts}" class="card border-secondary mb-3 container-fluid" >
 
                     <div class="card-header" th:text="${post.postId}">Notice-Type</div>
